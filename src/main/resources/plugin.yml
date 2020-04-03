@@ -1,0 +1,4 @@
+name: SpecNoEffect
+description: Prevent spectators from obtaining g-set potion effects
+version: 1.0
+main: me.ryanalexander.SpecNoEffect.Main
