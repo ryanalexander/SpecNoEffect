@@ -5,6 +5,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.potion.Potion;
+import org.bukkit.potion.PotionEffect;
 
 public class PlayerEvents implements Listener {
 
@@ -12,7 +13,8 @@ public class PlayerEvents implements Listener {
     public void PlayerMove(PlayerMoveEvent e){
         // Check player is in Spectator
         if(e.getPlayer().getGameMode() == GameMode.SPECTATOR)
-            e.getPlayer().getActivePotionEffects().clear();
+            for (PotionEffect effect : e.getPlayer().getActivePotionEffects())
+                e.getPlayer().removePotionEffect(effect.getType());
     }
 
 }
